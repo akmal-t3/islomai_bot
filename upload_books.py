@@ -42,4 +42,4 @@ def upload_pdf(filename):
         print(f"Загружено {i+1}/{len(chunks)}")
     print(f"{filename} — готово!")
 
-upload_pdf("kniga1.pdf")
+upload_pdf("Завет Авраама.pdf")
