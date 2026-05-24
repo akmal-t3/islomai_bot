@@ -1,3 +1,4 @@
+import asyncio
 import os
 import anthropic
 from telegram import Update
@@ -43,7 +44,8 @@ async def handle_message(update: Update, context):
     user_text = update.message.text
     await update.message.reply_text("⏳ Ищу ответ в книгах...")
 
-    book_content = search_books(user_text)
+    import asyncio
+book_content = await asyncio.to_thread(search_books, user_text)
 
     if book_content:
         system = f"""Ты исламский учёный-ассистент.
